@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------------------------------------
+// Scripts to upload plugin to Bintray/JCenter [https://bintray.com/]
+// > ./gradlew bintrayUpload
+//--------------------------------------------------------------------------------------------------
+
+//noinspection GroovyAssignabilityCheck
+//task bintrayUpload(type: GradleBuild, dependsOn: 'clean') {
+//  buildFile = 'bintray.gradle'
+//  tasks = ['bintrayUpload']
+//}
+
+
+//noinspection GroovyAssignabilityCheck
+task sourcesJar(type: Jar) {
+  from sourceSets.main.allGroovy, sourceSets.main.allJava
+  classifier = 'sources'
+}
+
+//noinspection GroovyAssignabilityCheck
+task javadocJar(type: Jar, dependsOn: groovydoc) {
+  classifier = 'javadoc'
+  from groovydoc.destinationDir
+}
+
+artifacts {
+  archives javadocJar
+  archives sourcesJar
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
+// ./gradlew clean build 
+// mvn coordinate : yangxiaobin:environment-reporter:0.1.0
+publish {
+  // bintray.com account name
+  userOrg = 'yangxiaobin'
+  // jcenter path
+  groupId = 'yangxiaobin'
+  // project name
+  artifactId = 'environment-reporter'
+  // version
+  publishVersion = '0.1.0'
+  // description
+  desc = 'A gradle plugin for Android Application to aggregate tools information.'
+  website = 'https://github.com/yangxiaobinhaoshuai'
+}

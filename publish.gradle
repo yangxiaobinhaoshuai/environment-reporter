@@ -1,0 +1,16 @@
+// publish to local maven repository for testing.
+apply plugin: 'maven-publish'
+
+// artifact name : Environment-Reporter-1.0.0.jar
+// artifact descriptor : yangxiaobin:environment-reporter:0.1.0
+group 'yangxiaobin'
+version '1.0.0'
+archivesBaseName = 'Environment-Reporter'
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+}
