@@ -38,6 +38,13 @@ buildscript {
 }
 ```
 
+## About This Plugin 
+
+Built by 
+> AGP 3.3.2  (compileOnly)
+
+> Gradle 4.10.1
+
 
 ## Thanks to
 - [FlipTable](https://github.com/JakeWharton/flip-tables)

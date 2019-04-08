@@ -42,5 +42,5 @@ publish {
   publishVersion = '0.1.0'
   // description
   desc = 'A gradle plugin for Android Application to aggregate tools information.'
-  website = 'https://github.com/yangxiaobinhaoshuai'
+  website = 'https://github.com/yangxiaobinhaoshuai/environment-reporter'
 }

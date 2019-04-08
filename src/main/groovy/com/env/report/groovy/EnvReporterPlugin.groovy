@@ -158,7 +158,6 @@ class EnvReporterPlugin implements Plugin<Project> {
     // ::app:assembleFasterBuildOnApi21Debug
     String startTaskName = mStartParameter.taskNames[0]
 
-    println(" start Task name :$startTaskName")
     // not assemble task
     if (!startTaskName.contains('assemble')) return
 
@@ -166,7 +165,6 @@ class EnvReporterPlugin implements Plugin<Project> {
 
     // FasterBuildOnApi21Debug -> fasterBuildOnApi21Debug
     String variantName = startTaskName.substring(assembleIndex + 'assemble'.length()).uncapitalize()
-    println("-----------> $variantName")
 
     String variantInfo = ""
     mAppExtension.applicationVariants.all { ApplicationVariant variant ->
