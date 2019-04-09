@@ -1,5 +1,23 @@
 // publish to local maven repository for testing.
 apply plugin: 'maven-publish'
+apply plugin: 'groovy'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+
+  testImplementation group: 'junit', name: 'junit', version: '4.12'
+
+  implementation gradleApi()
+  implementation localGroovy()
+}
+
+apply from: 'external-deps.gradle'
 
 // artifact name : Environment-Reporter-1.0.0.jar
 // artifact descriptor : yangxiaobin:environment-reporter:0.1.0

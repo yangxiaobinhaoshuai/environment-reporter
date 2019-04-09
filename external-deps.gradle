@@ -1,0 +1,14 @@
+
+
+repositories {
+  google()
+  jcenter()
+}
+
+dependencies {
+  // print table
+  implementation 'com.jakewharton.fliptables:fliptables:1.0.2'
+  // print in color in console
+  implementation 'org.fusesource.jansi:jansi:1.8'
+  compileOnly 'com.android.tools.build:gradle:3.3.2'
+}

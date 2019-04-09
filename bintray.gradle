@@ -1,13 +1,30 @@
-//--------------------------------------------------------------------------------------------------
-// Scripts to upload plugin to Bintray/JCenter [https://bintray.com/]
-// > ./gradlew bintrayUpload
-//--------------------------------------------------------------------------------------------------
+// script classpath
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.novoda:bintray-release:0.9'
+  }
+}
 
-//noinspection GroovyAssignabilityCheck
-//task bintrayUpload(type: GradleBuild, dependsOn: 'clean') {
-//  buildFile = 'bintray.gradle'
-//  tasks = ['bintrayUpload']
-//}
+plugins {
+  id 'groovy'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation gradleApi()
+  implementation localGroovy()
+}
+
+apply from: 'external-deps.gradle'
 
 
 //noinspection GroovyAssignabilityCheck
@@ -29,7 +46,7 @@ artifacts {
 
 apply plugin: 'com.novoda.bintray-release'
 
-// ./gradlew clean build 
+// ./gradlew clean build
 // mvn coordinate : yangxiaobin:environment-reporter:0.1.0
 publish {
   // bintray.com account name
