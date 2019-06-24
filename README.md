@@ -1,3 +1,4 @@
+> [中文版 README](README_CN.md)
 # (Android) Environment-Reporter
 This is a gradle plugin for Android Application to aggregate tools information.
  

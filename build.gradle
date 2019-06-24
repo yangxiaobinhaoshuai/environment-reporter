@@ -37,7 +37,7 @@ task bintrayUpload(type: GradleBuild, dependsOn: 'clean') {
 
 //noinspection GroovyAssignabilityCheck
 task publishToLocalMavenRepo(type: GradleBuild, dependsOn: 'clean') {
-  buildFile = 'publish.gradle'
+  buildFile = 'publish-local.gradle'
   tasks = ['publishToMavenLocal']
 }
 
